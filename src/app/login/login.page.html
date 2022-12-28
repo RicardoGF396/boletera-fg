@@ -1,12 +1,63 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Inicio de sesión</ion-title>
+    <ion-img  style="width: 7%; height: 7%" src="../../assets/icon/logo.png"></ion-img>
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="ion-padding">
-  <form>
+  <ion-grid sizeLg="12" sizeMd="12" sizeXs="12">
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <!-- <img alt="Silhouette of mountains" src="../../assets/icon/logo.png" /> -->
+
+            <ion-img style="width: 20%; height: 20%;" src="../../assets/icon/logo.png"></ion-img>
+            <br>
+            <ion-card-title>Inicia Sesión</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <form [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
+
+            <ion-item lines="full">
+              <ion-label position="floating">Correo *</ion-label>
+              <ion-input  formControlName="correo" type="email" required></ion-input>
+              <!-- <span class="error ion-padding" *ngIf="f['correo'].errors['required']">
+                El correo es requerido
+              </span> -->
+              <!-- <span class="error ion-padding" *ngIf="isSubmit && errorControl.correo.errors?.pattern">
+                Ingresa un correo valido
+              </span> -->
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Contraseña *</ion-label>
+              <ion-input   formControlName="contrasena" type="password" required></ion-input>
+              <!-- <span class="error ion-padding" *ngIf="isSubmit && errorControl.contrasena.errors?.required">
+                La contrasena es requerida
+              </span> -->
+            </ion-item>
+            <br>
+            <ion-row>
+              <ion-col>
+                <ion-button type="submit" color="primary" expand="block"
+                  >Iniciar sesión</ion-button
+                >
+                <br>
+                <a class="small-text" style="color: #EC7607;">Olvidaste tu contraseña?</a
+                >
+              </ion-col>
+            </ion-row>
+          </form>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+  <!-- <form>
     <ion-item lines="full">
+
       <ion-label position="floating">Correo</ion-label>
       <ion-input type="text" required></ion-input>
     </ion-item>
@@ -20,5 +71,5 @@
         <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
       </ion-col>
     </ion-row>
-  </form>
-</ion-content>
+  </form> -->
+

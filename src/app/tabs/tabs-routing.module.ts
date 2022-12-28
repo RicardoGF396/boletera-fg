@@ -9,7 +9,7 @@ const routes: Routes = [
     children: [
       {
         path: 'eventos',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../eventos/eventos.module').then(m => m.EventosPageModule)
       },
       {
         path: 'evento/:id',
@@ -17,11 +17,11 @@ const routes: Routes = [
       },
       {
         path: 'carrito',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('../carrito/carrito.module').then(m => m.CarritoPageModule)
       },
       {
         path: 'perfil',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('../perfil/perfil.module').then(m => m.PerfilPageModule)
       },
       {
         path: '',

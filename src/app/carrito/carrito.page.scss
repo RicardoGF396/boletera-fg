@@ -1,0 +1,32 @@
+ion-toolbar {
+  --background: #0f0f0f;
+}
+ion-img {
+  display: block;
+  margin: 0 auto;
+  padding: 0%;
+}
+ion-button {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  padding: 0%;
+}
+.col {
+  border: solid 1px grey;
+  border-bottom-style: none;
+  border-right-style: none;
+}
+.col:last-child {
+  border-right: solid 1px grey;
+}
+
+.row:last-child .col {
+  border-bottom: solid 1px grey;
+  text-align: center;
+}
+.header .col {
+  background-color: #ec7607;
+  font-weight: bold;
+  text-align: center;
+}

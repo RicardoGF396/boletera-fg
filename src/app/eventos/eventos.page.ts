@@ -3,11 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-eventos',
+  templateUrl: 'eventos.page.html',
+  styleUrls: ['eventos.page.scss']
 })
-export class Tab1Page {
+export class EventosPage {
   eventos: any = [];
 
   constructor(private http: HttpClient) {}

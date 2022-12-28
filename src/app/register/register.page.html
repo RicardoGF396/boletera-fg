@@ -1,0 +1,164 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-img
+      style="width: 7%; height: 7%"
+      src="../../assets/icon/logo.png"
+    ></ion-img>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-grid sizeLg="12" sizeMd="12" sizeXs="12">
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <!-- <img alt="Silhouette of mountains" src="../../assets/icon/logo.png" /> -->
+            <ion-card-title>Registrate</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <form [formGroup]="registerForm" (ngSubmit)="submitForm()" novalidate>
+
+            <ion-label class="fw-bold" color="secondary"
+              >Detalles del cliente:
+            </ion-label>
+        
+            <ion-item lines="full">
+              <ion-label position="floating">Nombre(s) *</ion-label>
+              <ion-input formControlName="nombreC" type="text" required></ion-input>
+            </ion-item> 
+            <ion-item lines="full">
+              <ion-label position="floating">Segundo Nombre(s)</ion-label>
+              <ion-input formControlName="segundonombreC" type="text"></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Apellido * </ion-label>
+              <ion-input formControlName="apellidoC" type="text" required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Segundo Apellido * </ion-label>
+              <ion-input formControlName="segundoapellidoC" type="text" required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating"
+                >Correo electrónico (Usuario) *</ion-label
+              >
+              <ion-input formControlName="correoC" type="email" required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Contraseña *</ion-label>
+              <ion-input formControlName="contrasenaC"type="password" required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Confirmar Contraseña *</ion-label>
+              <ion-input type="password" required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Teléfono *</ion-label>
+              <ion-input formControlName="telefonoC" type="tel" required></ion-input>
+            </ion-item>
+            <br />
+
+            <ion-label class="fw-bold" color="secondary"
+              >Detalles del dirección:
+            </ion-label>
+
+            <ion-item lines="full">
+              <ion-label position="floating">País (s) *</ion-label>
+              <ion-input formControlName="paisD" type="text" required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Calle y # *</ion-label>
+              <ion-input formControlName="calleD" type="text"></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Colonia  * </ion-label>
+              <ion-input formControlName="coloniaD" type="text" required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Ciudad  * </ion-label>
+              <ion-input formControlName="ciudadD" type="text" required></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Estado   * </ion-label>
+              <ion-input formControlName="estadoD" type="text" required></ion-input>
+            </ion-item> 
+            <ion-item lines="full">
+              <ion-label position="floating">Código postal *
+              </ion-label>
+              <ion-input formControlName="cpD" type="text" required></ion-input>
+            </ion-item> 
+            <br />
+         
+            <ion-item>
+              <ion-checkbox   formControlName="datosTarjeta"  [(ngModel)]="datosTarjeta" (ionChange)="isChecked()"></ion-checkbox> &nbsp;
+              <ion-label> Ingresar datos de la Tarjeta en caso de ser otra Dirección</ion-label>
+            </ion-item>
+            <br />
+            <br />
+
+            <div *ngIf="datosTarjeta">
+              <ion-label class="fw-bold" color="secondary">
+              Detalles de la dirección de facturación :
+            </ion-label>
+            <ion-item lines="full">
+              <ion-label position="floating">Nombre(s) *</ion-label>
+              <ion-input formControlName="nombreF" type="text" ></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Segundo Nombre(s)</ion-label>
+              <ion-input formControlName="segundonombreF" type="text"></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Apellido * </ion-label>
+              <ion-input formControlName="apellidoF" type="text" ></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Segundo Apellido * </ion-label>
+              <ion-input formControlName="segundoapellidoF" type="text" ></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">País (s) *</ion-label>
+              <ion-input formControlName="paisF" type="text" ></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Estado   * </ion-label>
+              <ion-input formControlName="estadoF" type="text" ></ion-input>
+            </ion-item> 
+            <ion-item lines="full">
+              <ion-label position="floating">Ciudad  * </ion-label>
+              <ion-input formControlName="ciudadF" type="text" ></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Calle y # *</ion-label>
+              <ion-input formControlName="calleF" type="text" ></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Colonia  * </ion-label>
+              <ion-input formControlName="coloniaF" type="text" ></ion-input>
+            </ion-item>
+            <ion-item lines="full">
+              <ion-label position="floating">Código postal *
+              </ion-label>
+              <ion-input formControlName="cpF" type="text" ></ion-input>
+            </ion-item>
+            <br />
+          </div>
+
+            <ion-row>
+              <ion-col>
+                <ion-button type="submit" color="secondary" expand="block"
+                  >Registrate</ion-button
+                >
+                <br />
+              </ion-col>
+            </ion-row>
+          </form>
+
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
