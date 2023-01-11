@@ -1,4 +1,4 @@
-import { Component,OnInit,ElementRef, ViewChild,AfterViewInit } from '@angular/core';
+import { Component,OnInit,ElementRef, ViewChild,AfterViewInit, Renderer2} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
@@ -8,7 +8,7 @@ import * as svgPanZoom from 'svg-pan-zoom';
   templateUrl: 'evento.page.html',
   styleUrls: ['evento.page.scss']
 })
-export class EventoPage implements OnInit  {
+export class EventoPage implements OnInit{
   private panZoom!: SvgPanZoom.Instance;
 
   id: any;
@@ -23,8 +23,12 @@ export class EventoPage implements OnInit  {
     }
   };
   constructor( private activatedRoute: ActivatedRoute,
-    private http: HttpClient) {}
+    private http: HttpClient,
+    private renderer: Renderer2) {}
     @ViewChild('svg', {static: false}) svg!: ElementRef<SVGSVGElement>;
+    
+    @ViewChild('tooltip') tooltip!: ElementRef;
+
     ngAfterViewInit() {
       // console.log(this.svg.nativeElement);
      
@@ -44,6 +48,26 @@ export class EventoPage implements OnInit  {
 
     });
     // console.log("id", this.id);
+  }
+  public mouseEnter($event:Event, data:any): void {
+    console.log(data);
+    let circle = $event.target as HTMLElement;
+    let coordinates = circle.getBoundingClientRect();
+
+    let x = `${coordinates.left - 50}px`;
+    let y = `${coordinates.top - 80}px`;
+    
+
+    // alert(data);
+    this.renderer.setStyle(this.tooltip.nativeElement, 'left', x);
+    this.renderer.setStyle(this.tooltip.nativeElement, 'top', y);
+    this.renderer.setStyle(this.tooltip.nativeElement, 'display', 'block');
+    this.renderer.setProperty(this.tooltip.nativeElement, 'innerHTML', 'Seccion A <br> Fila: J <br> Asiento 80 <br> Precio ' + data);
+  }
+
+  public mouseLeave($event:any): void {
+    this.renderer.setProperty(this.tooltip.nativeElement, 'innerHTML', '');
+    this.renderer.setStyle(this.tooltip.nativeElement, 'display', 'none');
   }
   getEvento() {
     //peticion

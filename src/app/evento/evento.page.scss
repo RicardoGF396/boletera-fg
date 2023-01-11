@@ -13,4 +13,32 @@ ion-card {
     border-radius: 2%;
 
 }
+.tooltip {
+  display: none;
+  position: absolute;
+  font-size: 0.75em;
+  background-color: white;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  border-radius: 2px;
+}
+.tooltip2 {
+  display: none;
+  position: absolute;
+  font-size: 0.75em;
+  background-color: white;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  border-radius: 2px;
+}
+// ion-slides  {
+//   margin: 0;
+//   overflow: hidden;
+//   height: 100%;
+//   width: auto;
+// }
+@import '~bootstrap/dist/css/bootstrap.min.css';    
+
 
