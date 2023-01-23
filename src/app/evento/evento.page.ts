@@ -11,6 +11,7 @@ import * as svgPanZoom from 'svg-pan-zoom';
 export class EventoPage implements OnInit{
   private panZoom!: SvgPanZoom.Instance;
 
+  public points: any =[];
   id: any;
   finalid: number=0;
   eventos: any = [];
@@ -26,14 +27,30 @@ export class EventoPage implements OnInit{
     private http: HttpClient,
     private renderer: Renderer2) {}
     @ViewChild('svg', {static: false}) svg!: ElementRef<SVGSVGElement>;
-    
+
     @ViewChild('tooltip') tooltip!: ElementRef;
 
     ngAfterViewInit() {
       // console.log(this.svg.nativeElement);
-     
+
     }
   ngOnInit() {
+    let cx =  2553;
+    let cy = 6150.16;
+
+    for(let j = 1; j <= 7; j++){
+
+      for(let i = 1; i <= 10; i++){
+        this.points.push({cx: cx, cy : cy,price :10});
+        cx += 78;
+      }
+      cy -= 50;
+      cx = 2553
+    }
+
+    console.log(this.points);
+
+
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     this.finalid = this.id - 1;
 
@@ -44,9 +61,14 @@ export class EventoPage implements OnInit{
       this.ubicacion = this.eventos[this.id].shortname;
       this.precio = this.eventos[this.id].key;
       // console.log(this.name);
-      
+
 
     });
+
+    for (let point of this.points) {
+      // console.log(point.cx);
+
+    }
     // console.log("id", this.id);
   }
   public mouseEnter($event:Event, data:any): void {
@@ -56,7 +78,7 @@ export class EventoPage implements OnInit{
 
     let x = `${coordinates.left - 50}px`;
     let y = `${coordinates.top - 80}px`;
-    
+
 
     // alert(data);
     this.renderer.setStyle(this.tooltip.nativeElement, 'left', x);

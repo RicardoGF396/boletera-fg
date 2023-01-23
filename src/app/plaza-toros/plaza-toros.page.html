@@ -1,0 +1,112 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-img  style="width: 7%; height: 7%" src="../../assets/icon/logo.png"></ion-img>
+
+    <ion-title>Evento de {{name}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-img  class="logo" style="width: 7%; height: 7%" src="../../assets/icon/logo.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeLg="8" sizeMd="8" sizeXs="8">
+        <ion-card>
+          <ion-card-header>
+            <ion-slides [options]="" zoom>
+              <ion-slide>
+                <div class="swiper-zoom-container" id="main">
+                  <div #tooltip class="tooltip2"></div>
+                  <svg  width="100%" height="100%" id="map" viewBox="0, 0, 816 1056" style="background-image: url(assets/ZONIFICACION_ESTADIO_TOROS.svg);background-repeat: no-repeat; background-size:89%;
+                  zoom: 100%;">
+                    <g class="seats">
+                      <g data-component="svg__block" data-section-name="224" data-section-id="s_39" class="section" transform="" >
+                        <g *ngFor="let point of points224">
+                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".5"   (mouseenter)="mouseEnter($event, '3200')"
+                          (mouseleave)="mouseLeave($event)"></circle>
+                        </g>
+                        <g>
+                        </g>
+                      </g>
+                      <g data-component="svg__block" data-section-name="222" data-section-id="s_39" class="section" transform="" >
+                        <g *ngFor="let point of points222">
+                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".5"   (mouseenter)="mouseEnter($event, '3200')"
+                          (mouseleave)="mouseLeave($event)"></circle>
+                        </g>
+
+                        <g>
+                         <!--
+                         <circle data-component="svg_seat" id="I" data-seat-name="80" cx="152.66" cy="820.05" r=".5" ></circle>
+                          <circle data-component="svg_seat" id="I" data-seat-name="80" cx="85.68" cy="814.2" r=".5" ></circle>
+                          <circle data-component="svg_seat" id="A" data-seat-name="54" cx="3250" cy="5840.16" r="15" ></circle> -->
+                        </g>
+                      </g>
+                      <g data-component="svg__block" data-section-name="220" data-section-id="s_39" class="section" transform="" >
+                        <g *ngFor="let point of points220">
+                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".5"   (mouseenter)="mouseEnter($event, '3200')"
+                          (mouseleave)="mouseLeave($event)"></circle>
+                        </g>
+                        <!-- <circle data-component="svg_seat" id="I" data-seat-name="80" cx="218.55" cy="813.2" r=".5" ></circle>
+                        <circle data-component="svg_seat" id="I" data-seat-name="80" cx="220.7" cy="812.8" r=".5" ></circle> -->
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </ion-slide>
+            </ion-slides>
+            <!-- <svg #svg
+  viewBox="0, 0, 100, 100">
+
+  <circle cx="10" cy="10" r="5"/>
+  <circle cx="15" cy="20" r="5"/>
+
+</svg> -->
+
+            <!-- <ion-slides [options]="sliderOpts" zoom>
+              <ion-slide>
+                <div class="swiper-zoom-container">
+
+            <ion-img
+              alt="Silhouette of mountains"
+              src="https://ionicframework.com/docs/img/demos/card-media.png"
+            ></ion-img>
+          </div>
+
+          </ion-slide>
+
+          </ion-slides> -->
+
+            <ion-card-title>Nombre del evento {{name}}</ion-card-title>
+            <ion-card-subtitle
+              >Datos del evento {{ubicacion}}</ion-card-subtitle
+            >
+          </ion-card-header>
+
+          <ion-card-content> Fecha  {{precio}}</ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="4">
+        <ion-list>
+          <ion-item>
+            <ion-label>Boletos #</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Precio</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Total</ion-label>
+          </ion-item>
+
+        </ion-list>
+        <ion-button color="primary">Comprar</ion-button>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

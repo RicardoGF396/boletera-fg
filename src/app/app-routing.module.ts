@@ -12,6 +12,10 @@ const routes: Routes = [
   },  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'plaza-toros',
+    loadChildren: () => import('./plaza-toros/plaza-toros.module').then( m => m.PlazaTorosPageModule)
   }
 
 ];

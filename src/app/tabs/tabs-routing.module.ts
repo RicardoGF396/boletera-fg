@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('../evento/evento.module').then( m => m.EventoPageModule)
       },
       {
+        path: 'plaza-toros/:id',
+        loadChildren: () => import('../plaza-toros/plaza-toros.module').then( m => m.PlazaTorosPageModule)
+      },
+      {
         path: 'carrito',
         loadChildren: () => import('../carrito/carrito.module').then(m => m.CarritoPageModule)
       },
@@ -29,7 +33,7 @@ const routes: Routes = [
         pathMatch: 'full'
       }
     ],
-   
+
   },
   {
     path: '',
