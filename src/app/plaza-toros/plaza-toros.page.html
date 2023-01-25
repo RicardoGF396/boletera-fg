@@ -1,11 +1,3 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-img  style="width: 7%; height: 7%" src="../../assets/icon/logo.png"></ion-img>
-
-    <ion-title>Evento de {{name}}
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
 <ion-header>
   <ion-toolbar>
     <ion-img  class="logo" style="width: 7%; height: 7%" src="../../assets/icon/logo.png"></ion-img>
@@ -27,7 +19,7 @@
                     <g class="seats">
                       <g data-component="svg__block" data-section-name="224" data-section-id="s_39" class="section" transform="" >
                         <g *ngFor="let point of points224">
-                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".5"   (mouseenter)="mouseEnter($event, '3200')"
+                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.data-price]="point.price" data-toggle="tooltip" data-placement="bottom" data-toggle="tooltip" data-placement="bottom" [attr.data-section-name]="point.section" [attr.data-seat-number]="point.seat" [attr.data-fila-name]="point.fila" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".51"   (click)="mouseEnter($event, '3200')"
                           (mouseleave)="mouseLeave($event)"></circle>
                         </g>
                         <g>
@@ -35,7 +27,7 @@
                       </g>
                       <g data-component="svg__block" data-section-name="222" data-section-id="s_39" class="section" transform="" >
                         <g *ngFor="let point of points222">
-                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".5"   (mouseenter)="mouseEnter($event, '3200')"
+                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.data-price]="point.price" data-toggle="tooltip" data-placement="bottom" data-toggle="tooltip" data-placement="bottom" [attr.data-section-name]="point.section" [attr.data-seat-number]="point.seat" [attr.data-fila-name]="point.fila" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".51"   (click)="mouseEnter($event, '3200')"
                           (mouseleave)="mouseLeave($event)"></circle>
                         </g>
 
@@ -48,45 +40,48 @@
                       </g>
                       <g data-component="svg__block" data-section-name="220" data-section-id="s_39" class="section" transform="" >
                         <g *ngFor="let point of points220">
-                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".5"   (mouseenter)="mouseEnter($event, '3200')"
+                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.data-price]="point.price" data-toggle="tooltip" data-placement="bottom" data-toggle="tooltip" data-placement="bottom" [attr.data-section-name]="point.section" [attr.data-seat-number]="point.seat" [attr.data-fila-name]="point.fila" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".51"   (click)="mouseEnter($event, '3200')"
                           (mouseleave)="mouseLeave($event)"></circle>
                         </g>
                         <!-- <circle data-component="svg_seat" id="I" data-seat-name="80" cx="218.55" cy="813.2" r=".5" ></circle>
                         <circle data-component="svg_seat" id="I" data-seat-name="80" cx="220.7" cy="812.8" r=".5" ></circle> -->
                       </g>
+                      <g data-component="svg__block" data-section-name="218" data-section-id="s_39" class="section" transform="" >
+                        <g *ngFor="let point of points218">
+                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.data-price]="point.price" data-toggle="tooltip" data-placement="bottom" data-toggle="tooltip" data-placement="bottom" [attr.data-section-name]="point.section" [attr.data-seat-number]="point.seat" [attr.data-fila-name]="point.fila" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".51"   (click)="mouseEnter($event, '3200')"
+                          (mouseleave)="mouseLeave($event)"></circle>
+                        </g>
+                         <!-- <circle data-component="svg_seat" id="I" data-seat-name="80" cx="269" cy="809.9" r=".5" ></circle>
+                        <circle data-component="svg_seat" id="I" data-seat-name="80" cx="271.2" cy="809.5" r=".5" ></circle> -->
+                      </g>
+                      <g data-component="svg__block" data-section-name="216" data-section-id="s_39" class="section" transform="" >
+                        <g *ngFor="let point of points216">
+                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.data-price]="point.price" data-toggle="tooltip" data-placement="bottom" data-toggle="tooltip" data-placement="bottom" [attr.data-section-name]="point.section" [attr.data-seat-number]="point.seat" [attr.data-fila-name]="point.fila" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".51"   (click)="mouseEnter($event, '3200')"
+                          (mouseleave)="mouseLeave($event)"></circle>
+                        </g>
+                         <!-- <circle data-component="svg_seat" id="I" data-seat-name="80" cx="310.2" cy="802.8" r=".5" ></circle>
+                        <circle data-component="svg_seat" id="I" data-seat-name="80" cx="312.2" cy="802.45" r=".5" ></circle> -->
+                      </g>
+                      <!-- <g data-component="svg__block" data-section-name="124" data-section-id="s_39" class="section" transform="" >
+                        <g *ngFor="let point of points124">
+                          <circle data-component="svg_seat" [attr.id]='point.id' [attr.data-seat-name]="point.name" [attr.cx]='point.cx' [attr.cy]='point.cy' r=".5"   (mouseenter)="mouseEnter($event, '3200')"
+                          (mouseleave)="mouseLeave($event)"></circle>
+                        </g>
+                         <circle data-component="svg_seat" id="I" data-seat-name="80" cx="310.2" cy="802.8" r=".5" ></circle>
+                        <circle data-component="svg_seat" id="I" data-seat-name="80" cx="312.2" cy="802.45" r=".5" ></circle>
+                      </g> -->
+
+
                     </g>
                   </svg>
                 </div>
               </ion-slide>
             </ion-slides>
-            <!-- <svg #svg
-  viewBox="0, 0, 100, 100">
-
-  <circle cx="10" cy="10" r="5"/>
-  <circle cx="15" cy="20" r="5"/>
-
-</svg> -->
-
-            <!-- <ion-slides [options]="sliderOpts" zoom>
-              <ion-slide>
-                <div class="swiper-zoom-container">
-
-            <ion-img
-              alt="Silhouette of mountains"
-              src="https://ionicframework.com/docs/img/demos/card-media.png"
-            ></ion-img>
-          </div>
-
-          </ion-slide>
-
-          </ion-slides> -->
 
             <ion-card-title>Nombre del evento {{name}}</ion-card-title>
             <ion-card-subtitle
-              >Datos del evento {{ubicacion}}</ion-card-subtitle
-            >
+              >Datos del evento {{ubicacion}}</ion-card-subtitle>
           </ion-card-header>
-
           <ion-card-content> Fecha  {{precio}}</ion-card-content>
         </ion-card>
       </ion-col>
@@ -103,10 +98,33 @@
           </ion-item>
 
         </ion-list>
-        <ion-button color="primary">Comprar</ion-button>
+        <ion-button color="primary" (click)="showSeats()">Comprar</ion-button>
 
       </ion-col>
-
+      <ion-col>
+        <!-- <template id="my-template">
+          <swal-title>
+            Save changes to "Untitled 1" before closing?
+          </swal-title>
+          <swal-icon type="warning" color="red"></swal-icon>
+          <swal-button type="confirm">
+            Save As
+          </swal-button>
+          <swal-button type="cancel">
+            Cancel
+          </swal-button>
+          <swal-button type="deny">
+            Close without Saving
+          </swal-button>
+          <swal-param name="allowEscapeKey" value="false" />
+          <swal-param
+            name="customClass"
+            value='{ "popup": "my-popup" }' />
+          <swal-function-param
+            name="didOpen"
+            value="popup => console.log(popup)" />
+        </template> -->
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

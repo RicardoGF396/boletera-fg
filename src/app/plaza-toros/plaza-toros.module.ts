@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import * as Swal from 'sweetalert2';
 
 import { IonicModule } from '@ionic/angular';
 
