@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import * as svgPanZoom from 'svg-pan-zoom';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-evento',
   templateUrl: 'evento.page.html',
@@ -48,7 +49,6 @@ export class EventoPage implements OnInit{
       cx = 2553
     }
 
-    console.log(this.points);
 
 
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -85,6 +85,17 @@ export class EventoPage implements OnInit{
     this.renderer.setStyle(this.tooltip.nativeElement, 'top', y);
     this.renderer.setStyle(this.tooltip.nativeElement, 'display', 'block');
     this.renderer.setProperty(this.tooltip.nativeElement, 'innerHTML', 'Seccion A <br> Fila: J <br> Asiento 80 <br> Precio ' + data);
+  }
+
+  openSection($section:any):void{
+    console.log("dentro");
+    let section:any = $section;
+    let text:any = "Usted esta en la seccion " + section ;
+    Swal.fire({
+      title : "Estos son tus asientos estas seguro de tu compra ?",
+      text : text,
+      heightAuto : true
+    });
   }
 
   public mouseLeave($event:any): void {

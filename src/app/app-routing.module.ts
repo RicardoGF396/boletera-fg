@@ -9,13 +9,18 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'plaza-toros',
     loadChildren: () => import('./plaza-toros/plaza-toros.module').then( m => m.PlazaTorosPageModule)
+  },
+  {
+    path: 'section/:map/:section',
+    loadChildren: () => import('./section/section.module').then( m => m.SectionPageModule)
   },
   {
     path: 'interactive-map',
