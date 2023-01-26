@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../plaza-toros/plaza-toros.module').then( m => m.PlazaTorosPageModule)
       },
       {
+        path: 'interactive-map/:id',
+        loadChildren: () => import('../interactive-map/interactive-map.module').then( m => m.InteractiveMapPageModule)
+      },
+      {
         path: 'carrito',
         loadChildren: () => import('../carrito/carrito.module').then(m => m.CarritoPageModule)
       },

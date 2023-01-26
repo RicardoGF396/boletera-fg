@@ -9,7 +9,7 @@
   <ion-grid>
     <ion-row>
       <ion-col sizeLg="4" sizeMd="4" sizeXs="4" *ngFor="let evento of eventos" >
-        <div *ngIf="evento.key === '00'; then thenBlock else elseBlock"></div>
+        <div *ngIf="evento.key === '00'; then thenBlock "></div>
             <ng-template #thenBlock>
               <ion-card [routerLink]="['/boletera/plaza-toros',evento.id]">
               <img
@@ -24,20 +24,39 @@
               <ion-card-content> Precio: {{evento.key}} </ion-card-content>
               </ion-card>
             </ng-template>
-            <ng-template #elseBlock>
-              <ion-card [routerLink]="['/boletera/evento',evento.id]">
-                <img
-                  alt="Silhouette of mountains"
-                  src="https://ionicframework.com/docs/img/demos/card-media.png"
-                />
-                <ion-card-header>
-                  <ion-card-title>Evento: {{evento.name}}</ion-card-title>
-                  <ion-card-subtitle>Ubicación: {{evento.shortname}}</ion-card-subtitle>
-                </ion-card-header>
 
-                <ion-card-content> Precio: {{evento.key}} </ion-card-content>
-                </ion-card>
-            </ng-template>
+        <div *ngIf="evento.key === '01'; then thenBlock1 "></div>
+        <ng-template #thenBlock1>
+          <ion-card [routerLink]="['/boletera/evento',evento.id]">
+          <img
+            alt="Silhouette of mountains"
+            src="https://ionicframework.com/docs/img/demos/card-media.png"
+          />
+          <ion-card-header>
+            <ion-card-title>Evento: {{evento.name}}</ion-card-title>
+            <ion-card-subtitle>Ubicación: {{evento.shortname}}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content> Precio: {{evento.key}} </ion-card-content>
+          </ion-card>
+        </ng-template>
+
+        <div *ngIf="evento.key === '02'; then thenBlock2 "></div>
+        <ng-template #thenBlock2>
+          <ion-card [routerLink]="['/boletera/interactive-map',evento.id]">
+          <img
+            alt="Silhouette of mountains"
+            src="https://ionicframework.com/docs/img/demos/card-media.png"
+          />
+          <ion-card-header>
+            <ion-card-title>Evento: {{evento.name}}</ion-card-title>
+            <ion-card-subtitle>Ubicación: {{evento.shortname}}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content> Precio: {{evento.key}} </ion-card-content>
+          </ion-card>
+        </ng-template>
+
 
       </ion-col>
 
