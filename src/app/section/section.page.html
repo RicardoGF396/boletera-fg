@@ -6,38 +6,61 @@
 
 <ion-content>
  <ion-col >
-  <ion-card>
-    <ion-card-header>
-    </ion-card-header>
-  </ion-card>
-  <ion-card>
-    <ion-card-content>
+   <ion-card>
+     <ion-card-content>
+
       <div class="swiper-zoom-container" id="main">
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         viewBox="0 0 1340 995" style="enable-background:new 0 0 1340 995;" xml:space="preserve">
-          <style type="text/css">
-            .st0{fill:#51B2B8;}
-            .st1{fill:#E2E965;}
-            .st2{fill:#3AC140;}
-            .st3{fill:#2FB9C3;}
-            .st4{fill:#C520D2;}
-            .st5{fill:#CD1E57;}
-            .st6{fill:#CCCCCC;}
-          </style>
-          <rect x="526" y="91" class="st6" width="288" height="813"/>
-          <circle class="st6" cx="949.5" cy="143" r="52"/>
-          <circle class="st6" cx="949.5" cy="320.25" r="52"/>
-          <circle class="st6" cx="949.5" cy="497.5" r="52"/>
-          <circle class="st6" cx="949.5" cy="674.75" r="52"/>
-          <circle class="st6" cx="949.5" cy="852" r="52"/>
-          <circle class="st6" cx="390.5" cy="143" r="52"/>
-          <circle class="st6" cx="390.5" cy="320.25" r="52"/>
-          <circle class="st6" cx="390.5" cy="497.5" r="52"/>
-          <circle class="st6" cx="390.5" cy="674.75" r="52"/>
-          <circle class="st6" cx="390.5" cy="852" r="52"/>
+            <style type="text/css">
+              .st0{fill:#51B2B8;}
+              .st1{fill:#E2E965;}
+              .st2{fill:#3AC140;}
+              .st3{fill:#2FB9C3;}
+              .st4{fill:#C520D2;}
+              .st5{fill:#CD1E57;}
+              .st6{fill:#CCCCCC}
+            </style>
+          <rect x="526" y="91" [class]="color" width="288" height="813"/>
+          <text x="600" y="525.5" fill="black" [attr.data-is-sele]="0" font-size = "80px">{{id}}</text>
+          <circle [class]="color"  [attr.data-seat-id]="id+'-2'" [attr.data-is-sele]="0" [id]="id+'-2'"  cx="949.5"cy="143" r="52"/>
+          <text x="929.5" y="173" fill="black" [attr.data-is-sele]="0" [attr.data-seat-id]="id+'-2'" font-size = "80px">2</text>
+          <circle [attr.data-seat-id]="id+'-2'" (click)="selectSeat($event)" style="opacity: 0;" [attr.data-is-sele]="0" [id]="id+'-2'"   cx="949.5"cy="143" r="52"/>
+          <circle [class]="color"  [attr.data-seat-id]="id+'-4'" [attr.data-is-sele]="0" [id]="id+'-4'"  cx="949.5"cy="320.25" r="52"/>
+          <text x="929.5" y="346.25" fill="black" [attr.data-is-sele]="0" [attr.data-seat-id]="id+'-4'" font-size = "80px">4</text>
+          <circle [attr.data-seat-id]="id+'-4'" (click)="selectSeat($event)" style="opacity: 0;" [attr.data-is-sele]="0" [id]="id+'-4'"  cx="949.5"cy="320.25" r="52"/>
+          <circle [class]="color"  [attr.data-seat-id]="id+'-6'" [attr.data-is-sele]="0" [id]="id+'-6'"  cx="949.5"cy="497.5" r="52"/>
+          <text x="929.5" y="525.5" fill="black" [attr.data-is-sele]="0" [attr.data-seat-id]="id+'-6'" font-size = "80px">6</text>
+          <circle [attr.data-seat-id]="id+'-6'" (click)="selectSeat($event)" style="opacity: 0;" [attr.data-is-sele]="0" [id]="id+'-6'"  cx="949.5"cy="497.5" r="52"/>
+          <circle [class]="color"  [attr.data-seat-id]="id+'-8'" [attr.data-is-sele]="0" [id]="id+'-8'"  cx="949.5"cy="674.75" r="52"/>
+          <text x="929.5" y="700.75" fill="black" [attr.data-is-sele]="0" [attr.data-seat-id]="id+'-8'" font-size = "80px">8</text>
+          <circle [attr.data-seat-id]="id+'-8'" (click)="selectSeat($event)" style="opacity: 0;" [attr.data-is-sele]="0" [id]="id+'-8'"  cx="949.5"cy="674.75" r="52"/>
+          <circle [class]="color"  [attr.data-seat-id]="id+'-10'" [attr.data-is-sele]="0" [id]="id+'-10'"  cx="949.5"cy="852" r="52"/>
+          <text x="907.5" y="880" fill="black" [attr.data-is-sele]="0" [attr.data-seat-id]="id+'-10'" font-size = "80px">10</text>
+          <circle [attr.data-seat-id]="id+'-10'" (click)="selectSeat($event)" style="opacity: 0;" [attr.data-is-sele]="0" [id]="id+'-10'"  cx="949.5"cy="852" r="52"/>
+          <circle [class]="color"  [attr.data-seat-id]="id+'-1'" [attr.data-is-sele]="0" [id]="id+'-1'"  cx="390.5"cy="143" r="52"/>
+          <text x="366.5" y="173" fill="black" [attr.data-is-sele]="0" [attr.data-seat-id]="id+'-1'" font-size = "80px">1</text>
+          <circle [attr.data-seat-id]="id+'-1'" (click)="selectSeat($event)" style="opacity: 0;" [attr.data-is-sele]="0" [id]="id+'-1'"  cx="390.5"cy="143" r="52"/>
+          <circle [class]="color"  [attr.data-seat-id]="id+'-3'" [attr.data-is-sele]="0" [id]="id+'-3'"  cx="390.5"cy="320.25" r="52"/>
+          <text x="370.5" y="346.25" fill="black" [attr.data-is-sele]="0" [attr.data-seat-id]="id+'-3'" font-size = "80px">3</text>
+          <circle [attr.data-seat-id]="id+'-3'" (click)="selectSeat($event)" style="opacity: 0;" [attr.data-is-sele]="0" [id]="id+'-3'"  cx="390.5"cy="320.25" r="52"/>
+          <circle [class]="color"  [attr.data-seat-id]="id+'-5'" [attr.data-is-sele]="0" [id]="id+'-5'"  cx="390.5"cy="497.5" r="52"/>
+          <text x="370.5" y="525.5" fill="black" [attr.data-is-sele]="0" [attr.data-seat-id]="id+'-5'" font-size = "80px">5</text>
+          <circle [attr.data-seat-id]="id+'-5'" (click)="selectSeat($event)" style="opacity: 0;" [attr.data-is-sele]="0" [id]="id+'-5'"  cx="390.5"cy="497.5" r="52"/>
+          <circle [class]="color"  [attr.data-seat-id]="id+'-7'" [attr.data-is-sele]="0" [id]="id+'-7'"  cx="390.5"cy="674.75" r="52"/>
+          <text x="370.5" y="700.75" fill="black" [attr.data-is-sele]="0" [attr.data-seat-id]="id+'-7'" font-size = "80px">7</text>
+          <circle [attr.data-seat-id]="id+'-7'" (click)="selectSeat($event)" style="opacity: 0;" [attr.data-is-sele]="0" [id]="id+'-7'"  cx="390.5"cy="674.75" r="52"/>
+          <circle [class]="color"  [attr.data-seat-id]="id+'-9'" [attr.data-is-sele]="0" [id]="id+'-9'"  cx="390.5"cy="852" r="52"/>
+          <text x="370.5" y="880" fill="black" [attr.data-is-sele]="0" [attr.data-seat-id]="id+'-9'" font-size = "80px">9</text>
+          <circle [attr.data-seat-id]="id+'-9'" (click)="selectSeat($event)" style="opacity: 0;" [attr.data-is-sele]="0" [id]="id+'-9'"  cx="390.5"cy="852" r="52"/>
         </svg>
       </div>
     </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+
+    </ion-card-header>
   </ion-card>
 </ion-col>
 </ion-content>

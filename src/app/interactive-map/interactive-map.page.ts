@@ -52,13 +52,14 @@ export class InteractiveMapPage implements OnInit {
     });
   }
 
-  async presentModal() {
+  async presentModal($event:Event) {
+    let zone:any = $event.target ;
     const modal = await this.modalController.create({
       component: SectionPage,
       componentProps: {
         'svg': 'Aitor',
-        'apellidos': 'Sánchez',
-        'locale': 'es_ES'
+        'section': zone.dataset.sectionName,
+        'id': zone.id
       }
     });
     return await modal.present();
