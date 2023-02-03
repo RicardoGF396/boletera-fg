@@ -57,7 +57,7 @@ export class InteractiveMapPage implements OnInit {
     const modal = await this.modalController.create({
       component: SectionPage,
       componentProps: {
-        'svg': 'Aitor',
+        'svg': 'NODAL',
         'section': zone.dataset.sectionName,
         'id': zone.id
       }

@@ -1,5 +1,7 @@
 import { Component,OnInit,ElementRef, ViewChild,AfterViewInit, Renderer2} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ModalController } from '@ionic/angular';
+import { SectionPage } from '../section/section.page';
 import { map } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 import * as svgPanZoom from 'svg-pan-zoom';
@@ -26,7 +28,8 @@ export class EventoPage implements OnInit{
   };
   constructor( private activatedRoute: ActivatedRoute,
     private http: HttpClient,
-    private renderer: Renderer2) {}
+    private renderer: Renderer2,
+    public modalController: ModalController) {}
     @ViewChild('svg', {static: false}) svg!: ElementRef<SVGSVGElement>;
 
     @ViewChild('tooltip') tooltip!: ElementRef;
@@ -87,15 +90,18 @@ export class EventoPage implements OnInit{
     this.renderer.setProperty(this.tooltip.nativeElement, 'innerHTML', 'Seccion A <br> Fila: J <br> Asiento 80 <br> Precio ' + data);
   }
 
-  openSection($section:any):void{
-    console.log("dentro");
-    let section:any = $section;
-    let text:any = "Usted esta en la seccion " + section ;
-    Swal.fire({
-      title : "Estos son tus asientos estas seguro de tu compra ?",
-      text : text,
-      heightAuto : true
+  async openSection($event:any){
+    let zone:any = $event.target ;
+    const modal = await this.modalController.create({
+      component: SectionPage,
+      componentProps: {
+        'svg': 'BASKET',
+        'section': zone.dataset.sectionName,
+        'id': zone.id,
+        'color' : zone.dataset.color
+      }
     });
+    return await modal.present();
   }
 
   public mouseLeave($event:any): void {
