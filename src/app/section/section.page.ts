@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NavParams } from '@ionic/angular';
 import Swal from 'sweetalert2';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-section',
@@ -16,7 +17,7 @@ export class SectionPage implements OnInit {
   public selected:any;
   public section:any;
   constructor(private activatedRoute:ActivatedRoute,
-    private navParams: NavParams) {
+    private navParams: NavParams,public modalCtrl: ModalController) {
       this.id = navParams.get('id');
        this.svg = navParams.get('svg');
       if (navParams.get('svg')== 'NODAL') {
@@ -46,6 +47,10 @@ export class SectionPage implements OnInit {
 
   getParams() {
     return this.activatedRoute.snapshot.params;
+  }
+
+  onDismiss() {
+    this.modalCtrl.dismiss();
   }
 
   selectSeat($seat:Event):void{
