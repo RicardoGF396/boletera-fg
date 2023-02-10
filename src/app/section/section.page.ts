@@ -55,30 +55,35 @@ export class SectionPage implements OnInit {
 
   selectSeat($seat:Event):void{
     let seat:any =$seat.target;
-    let circle = document.getElementById(seat.dataset.seatId);
-    if (seat.dataset.isSele == 0){
-      circle?.setAttribute("class","st6");
-      seat.dataset.isSele = 1;
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      })
+    if (this.svg == 'NODAL'){
+      let circle = document.getElementById(seat.dataset.seatId);
+      console.log(circle);
+      if (seat.dataset.isSele == 0){
+        circle?.setAttribute("class","st6");
+        seat.dataset.isSele = 1;
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        })
 
-      Toast.fire({
-        icon: 'success',
-        title: 'Seleccionado',
-        text:'Asiento ' + seat.dataset.seatId
-      })
-    }else {
-      circle?.setAttribute("class",this.color);
-      seat.dataset.isSele =0;
+        Toast.fire({
+          icon: 'success',
+          title: 'Seleccionado',
+          text:'Asiento ' + seat.dataset.seatId
+        })
+      }else {
+        circle?.setAttribute("class",this.color);
+        seat.dataset.isSele =0;
+      }
+    }else if (this.svg == 'BASKET'){
+      console.log(seat.id);
     }
   }
 
