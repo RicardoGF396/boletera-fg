@@ -9,7 +9,7 @@
             <ion-img src="../../assets/icon/ShadesWlogo.png"></ion-img>
 
             <br />
-            <ion-card-title>Inicia Sesión</ion-card-title>
+            <ion-card-title>Crear tu cuenta</ion-card-title>
           </ion-card-header>
 
           <ion-card-content>
@@ -19,8 +19,7 @@
                   ><ion-icon name="accessibility-outline"></ion-icon> Nombre
                   *</ion-label
                 >
-                <!-- formControlName="nombre" -->
-                <ion-input formControlName="nombre"  required></ion-input>
+                <ion-input formControlName="nombre" required></ion-input>
                 <!-- <span class="error ion-padding" *ngIf="isSubmit && errorControl.contrasena.errors?.required">
                   La contrasena es requerida
                 </span> -->
@@ -62,27 +61,30 @@
                     type="submit"
                     color="primary"
                     expand="block"
-                    >Iniciar sesión</ion-button
+                    >Crear cuenta</ion-button
                   >
-                  <div style="display: flex;
-                  justify-content: center; column-gap: 1rem; margin-top: 1rem;">
-                    <ion-button
-                    (click)="facebookSignin()"
+                  <ion-button
                     shape="round"
                     fill="clear"
                     style="text-align: center"
                     class="ion-no-padding"
                   >
                     <ion-img
-                      style="width: 36px"
+                      style="width: 30px"
                       src="../../assets/icon/facebook_3.png"
                     ></ion-img>
                   </ion-button>
-                  
-                  <asl-google-signin-button type='icon' width="200" shape="circle" size='large'></asl-google-signin-button>
-                  </div>
-
-                  <div class="g-sigin2" data-onsuccess="onSignIn" data-longtitle="true"></div>
+                  <ion-button
+                    shape="round"
+                    fill="clear"
+                    style="text-align: center"
+                    class="ion-no-padding"
+                  >
+                    <ion-img
+                      style="width: 30px"
+                      src="../../assets/icon/google-mas.png"
+                    ></ion-img>
+                  </ion-button>
                   <br />
                   <a class="small-text" style="color: #ec7607"
                     >Olvidaste tu contraseña?</a
@@ -96,21 +98,3 @@
     </ion-row>
   </ion-grid>
 </ion-content>
-<!-- <form>
-    <ion-item lines="full">
-
-
-      <ion-label position="floating">Correo</ion-label>
-      <ion-input type="text" required></ion-input>
-    </ion-item>
-    <ion-item lines="full">
-      <ion-label position="floating">Contrasena</ion-label>
-      <ion-input type="password" required></ion-input>
-    </ion-item>
-    <ion-row>
-      <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Iniciar sesión</ion-button>
-        <a [routerLink]="['/forgot-password']" class="small-text">Forgot Password?</a>
-      </ion-col>
-    </ion-row>
-  </form> -->

@@ -5,28 +5,17 @@ import {
   Validators,
   AbstractControl,
 } from '@angular/forms';
-import { GoogleLoginProvider, SocialAuthService, SocialLoginModule } from '@abacritt/angularx-social-login';
-import { FacebookLoginProvider } from '@abacritt/angularx-social-login';
 import Swal from 'sweetalert2';
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-signin',
+  templateUrl: './signin.page.html',
+  styleUrls: ['./signin.page.scss'],
 })
-export class LoginPage implements OnInit {
-  
-  /* Propiedades usadas para el login con redes sociales */
-  user: any;
-  loggedIn: boolean = false;
-
+export class SigninPage implements OnInit {
   public loginForm: FormGroup;
   isSubmit: boolean = false;
 
-  constructor(
-    public formBuilder: FormBuilder,
-    private authService: SocialAuthService
-  ) {
+  constructor(public formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
       correo: [
         '',
@@ -36,19 +25,11 @@ export class LoginPage implements OnInit {
         ],
       ],
       contrasena: ['', [Validators.required, Validators.minLength(6)]],
-      nombre: ['', [Validators.required]]
+      nombre: ['', [Validators.required]],
     });
   }
 
-  ngOnInit() {
-    /* El AuthService  se debe de iniciar antes, 
-       permite mostrar el objeto de User */
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-      console.log(this.user);
-    });
-  }
+  ngOnInit() {}
   get errorControl() {
     return this.loginForm.controls;
   }
@@ -75,18 +56,5 @@ export class LoginPage implements OnInit {
         heightAuto: false,
       });
     }
-  }
-
-  /* ======= Facebook ======= */
-  facebookSignin(): void {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID);
-  }
-
-  googleSignin(): void {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
-  }
-
-  signOut(): void {
-    this.authService.signOut();
   }
 }

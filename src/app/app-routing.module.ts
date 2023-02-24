@@ -25,7 +25,15 @@ const routes: Routes = [
   {
     path: 'interactive-map',
     loadChildren: () => import('./interactive-map/interactive-map.module').then( m => m.InteractiveMapPageModule)
-  }
+  },  {
+    path: 'login2',
+    loadChildren: () => import('./login2/login2.module').then( m => m.Login2PageModule)
+  },
+  {
+    path: 'signin',
+    loadChildren: () => import('./signin/signin.module').then( m => m.SigninPageModule)
+  },
+
 
 ];
 @NgModule({

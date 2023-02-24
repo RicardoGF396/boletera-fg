@@ -1,17 +1,17 @@
-@import '~bootstrap/dist/css/bootstrap.min.css';    
-
+@import "~bootstrap/dist/css/bootstrap.min.css";
 
 ion-toolbar {
-  --background: #0F0F0F;
+  --background: #0f0f0f;
 }
+
 ion-card {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    border-radius: 2%;
-    width: 50%;
-    margin-left: 150px;
-    margin-top: -60px;
+  border-radius: 2%;
+  width: 50%;
+  margin-left: 150px;
+  margin-top: -60px;
 }
 ion-grid {
   width: 70%;
@@ -23,19 +23,13 @@ ion-grid {
   //   justify-content: center !important;
 }
 
-
 ion-img {
   display: block;
   margin: 0 auto;
   padding: 0%;
 }
-ion-card-title{
+ion-card-title {
   margin-top: -20px;
   font-size: 25px;
   font-weight: bold;
-}
-
-#animated-container{
-  padding: 0;
-  border-radius: 1rem;
 }
